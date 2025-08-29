@@ -15,6 +15,13 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    <style>
+        .activity-img {
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
 </head>
 <body>
     <div id="app">

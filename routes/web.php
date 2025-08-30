@@ -8,6 +8,10 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/home', function () {
+    return view('home');
+});
+
 Route::get('/tentang-kami', function () {
     return view('about');
 });
@@ -22,6 +26,6 @@ Route::get('/berita', function () {
 
 Route::get('/kontak', [ContactController::class, 'index']);
 Route::post('/kontak', [ContactController::class, 'store'])->name('contact.store');
-Route::get('/admin/contacts', [ContactController::class, 'admin'])->name('contacts.admin');
+Route::get('/admin/kontak', [ContactController::class, 'admin'])->name('contacts.admin')->middleware('auth');
 
 Auth::routes();

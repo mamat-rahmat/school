@@ -53,19 +53,7 @@ class ContactController extends Controller
 
     public function admin()
     {
-        $contacts = Contact::latest()->get();
-        return response()->json([
-            'total_contacts' => $contacts->count(),
-            'contacts' => $contacts->map(function($contact) {
-                return [
-                    'id' => $contact->id,
-                    'name' => $contact->name,
-                    'email' => $contact->email,
-                    'subject' => $contact->subject,
-                    'message' => substr($contact->message, 0, 100) . '...',
-                    'created_at' => $contact->created_at->format('Y-m-d H:i:s')
-                ];
-            })
-        ]);
+        $contacts = Contact::latest()->paginate(10);
+        return view('admin.contacts', compact('contacts'));
     }
 }

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactFormMail;
 
 class ContactController extends Controller
 {
@@ -28,14 +30,25 @@ class ContactController extends Controller
                 ->withInput();
         }
 
-        Contact::create([
+        $contactData = [
             'name' => $request->name,
             'email' => $request->email,
             'subject' => $request->subject,
             'message' => $request->message
-        ]);
+        ];
 
-        return redirect()->back()->with('success', 'Pesan Anda telah berhasil dikirim!');
+        // Simpan ke database
+        Contact::create($contactData);
+
+        // Kirim email
+        try {
+            Mail::to(config('mail.from.address'))->send(new ContactFormMail($contactData));
+            $successMessage = 'Pesan Anda telah berhasil dikirim dan email notifikasi telah dikirim!';
+        } catch (\Exception $e) {
+            $successMessage = 'Pesan Anda telah berhasil dikirim, namun email notifikasi gagal dikirim.';
+        }
+
+        return redirect()->back()->with('success', $successMessage);
     }
 
     public function admin()

@@ -18,13 +18,9 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-
-    <style>
-        .activity-img {
-            height: 200px;
-            object-fit: cover;
-        }
-    </style>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 </head>
 <body>
     <div id="app">
@@ -94,5 +90,7 @@
 
         </main>
     </div>
+    
+    @stack('scripts')
 </body>
 </html>

@@ -36,9 +36,9 @@
                             <div class="news-content">
                                 <p class="card-text text-muted">{{ $item->content }}</p>
                             </div>
-                            <div class="text-end">
+                            {{-- <div class="text-end">
                                 <a href="#" class="btn btn-outline-primary btn-sm">Baca selengkapnya</a>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 @empty

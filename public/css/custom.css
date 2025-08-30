@@ -1,0 +1,16 @@
+/* Custom styles for SMPN 1 Bandung website */
+
+.activity-img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.hover-shadow:hover {
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+
+.card {
+    transition: all 0.3s ease;
+}

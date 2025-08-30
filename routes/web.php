@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\ContactController;
 
 Route::get('/', function () {
     return view('home');
@@ -19,8 +20,8 @@ Route::get('/berita', function () {
     return view('news');
 });
 
-Route::get('/kontak', function () {
-    return view('contact');
-});
+Route::get('/kontak', [ContactController::class, 'index']);
+Route::post('/kontak', [ContactController::class, 'store'])->name('contact.store');
+Route::get('/admin/contacts', [ContactController::class, 'admin'])->name('contacts.admin');
 
 Auth::routes();

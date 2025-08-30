@@ -9,12 +9,12 @@ function validateForm() {
     });
 
     // Validate Name
-    const nama = document.getElementById('nama');
-    if (!nama.value.trim()) {
-        showError(nama, 'Nama lengkap harus diisi');
+    const name = document.getElementById('name');
+    if (!name.value.trim()) {
+        showError(name, 'Nama lengkap harus diisi');
         isValid = false;
-    } else if (nama.value.length < 3) {
-        showError(nama, 'Nama harus minimal 3 karakter');
+    } else if (name.value.length < 3) {
+        showError(name, 'Nama harus minimal 3 karakter');
         isValid = false;
     }
 
@@ -29,30 +29,23 @@ function validateForm() {
         isValid = false;
     }
 
-    // Validate Phone (if filled)
-    const telepon = document.getElementById('telepon');
-    if (telepon.value.trim()) {
-        const phoneRegex = /^[0-9]{10,13}$/;
-        if (!phoneRegex.test(telepon.value)) {
-            showError(telepon, 'Nomor telepon harus 10-13 digit angka');
-            isValid = false;
-        }
-    }
-
     // Validate Subject
-    const subjek = document.getElementById('subjek');
-    if (!subjek.value) {
-        showError(subjek, 'Silakan pilih subjek');
+    const subject = document.getElementById('subject');
+    if (!subject.value.trim()) {
+        showError(subject, 'Subjek harus diisi');
+        isValid = false;
+    } else if (subject.value.length < 3) {
+        showError(subject, 'Subjek harus minimal 3 karakter');
         isValid = false;
     }
 
     // Validate Message
-    const pesan = document.getElementById('pesan');
-    if (!pesan.value.trim()) {
-        showError(pesan, 'Pesan harus diisi');
+    const message = document.getElementById('message');
+    if (!message.value.trim()) {
+        showError(message, 'Pesan harus diisi');
         isValid = false;
-    } else if (pesan.value.length < 10) {
-        showError(pesan, 'Pesan minimal 10 karakter');
+    } else if (message.value.length < 10) {
+        showError(message, 'Pesan minimal 10 karakter');
         isValid = false;
     }
 

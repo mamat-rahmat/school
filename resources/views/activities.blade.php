@@ -5,7 +5,6 @@
     <h1 class="text-center mb-5">Aktivitas Sekolah</h1>
 
     <div class="row g-4">
-        <!-- Academic Activities -->
         <div class="col-md-4">
             <div class="card h-100 shadow-sm">
                 <img src="{{ asset('images/academic.jpeg') }}" class="card-img-top activity-img" alt="Academic Activities">
@@ -16,7 +15,6 @@
             </div>
         </div>
 
-        <!-- Sports Activities -->
         <div class="col-md-4">
             <div class="card h-100 shadow-sm">
                 <img src="{{ asset('images/sports.jpg') }}" class="card-img-top activity-img" alt="Sports Activities">
@@ -27,7 +25,6 @@
             </div>
         </div>
 
-        <!-- Arts & Culture -->
         <div class="col-md-4">
             <div class="card h-100 shadow-sm">
                 <img src="{{ asset('images/arts.jpeg') }}" class="card-img-top activity-img" alt="Arts Activities">
@@ -38,7 +35,6 @@
             </div>
         </div>
 
-        <!-- Student Organizations -->
         <div class="col-md-4">
             <div class="card h-100 shadow-sm">
                 <img src="{{ asset('images/organizations.jpeg') }}" class="card-img-top activity-img" alt="Student Organizations">
@@ -50,7 +46,6 @@
             </div>
         </div>
 
-        <!-- Community Service -->
         <div class="col-md-4">
             <div class="card h-100 shadow-sm">
                 <img src="{{ asset('images/community.jpg') }}" class="card-img-top activity-img" alt="Community Service">
@@ -62,7 +57,6 @@
             </div>
         </div>
 
-        <!-- Special Events -->
         <div class="col-md-4">
             <div class="card h-100 shadow-sm">
                 <img src="{{ asset('images/events.jpeg') }}" class="card-img-top activity-img" alt="Special Events">
